@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+</head>
+<body>
+ <form action="userdel" method="get">
+ <tbody>
+ <% @q.each do |i|%>
+ <tr>
+ <tr><input type="radio" name="name" value=<%= i.username %>><%= i.username %></tr><br>
+ </tr>
+ <% end %>
+</tbody>
+ 
+ <input type="submit" name="b" value="Delete">
+ </form>
+</body>
+</html>

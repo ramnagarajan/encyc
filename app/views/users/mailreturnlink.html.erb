@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+</head>
+<body>
+ 
+ <center>
+ <h1>Change Password</h1>
+ <br><br><br>
+ <form name="myForm" action="" method="get" onsubmit="return validateForm()">
+ 
+ <input type="password" name="pass" class="form-control" placeholder="enter your password">
+ <br>
+ <input type="password" name="crm" class="form-control" placeholder="confirm your password">
+ <br>
+ <input type="submit" name="b1" value="SEND"> 
+ </form>
+</center>
+ <script >
+function validateForm() {
+ var x = document.forms["myForm"]["pass"].value;
+ var c = x.length;
+ if (x == null || x == "") {
+ alert("password must be filled out");
+ return false;
+ }
+ if(c<6)
+ {
+ alert("password length should be atleast 6 characters");
+ return false;
+ }
+ var y = document.forms["myForm"]["crm"].value;
+ if (y == null || y == "" || y!=x) {
+ alert("please confirm your password");
+ return false;
+ } 
+ alert("your password hass been changed");
+}
+ </script>
+</body>
+</html>
